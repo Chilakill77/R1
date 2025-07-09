@@ -16,7 +16,7 @@ services:
     ports: 
       - 3306:3306
     volumes:
-      - ./dbfiles:/docker-entrypoint-initdb.d
+      - ./angular/dbfiles:/docker-entrypoint-initdb.d
       - ./mysql_data:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=qwerty
@@ -35,11 +35,9 @@ services:
 
   sistema-ventas-front:
     build:
-      context: ./angular
+      context: ./angular/sistema-ventas-front
     container_name: sistema-ventas-front
     ports:
       - 80:80
     depends_on:
       - sistema-ventas-back
-    volumes:
-      - /temp

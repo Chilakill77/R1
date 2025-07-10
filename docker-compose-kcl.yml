@@ -35,7 +35,7 @@ services:
 
   sistema-ventas-front:
     build:
-      context: ./angular/sistema-ventas-front
+      context: ./angular
     container_name: sistema-ventas-front
     ports:
       - 80:80
